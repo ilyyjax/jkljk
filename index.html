@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RageRex — The Roastmaster</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Consent modal -->
+  <div id="consentModal" class="modal active">
+    <div class="modal-card">
+      <h2>Warning: Contains Roasts</h2>
+      <p>This chatbot is a comedic roastbot intended to provoke laughs and frustration. It will insult and mock in a playful way. By continuing you consent to receive insults. Not responsible for ego damage.</p>
+      <div class="modal-actions">
+        <label><input id="spawnWithTTS" type="checkbox" checked /> Enable voice (TTS) on spawn</label>
+        <button id="acceptBtn" class="btn primary">I can take it — spawn roast</button>
+        <button id="declineBtn" class="btn">No thanks</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="app">
+    <header class="topbar">
+      <div class="logo">😈 RageRex</div>
+      <div class="controls">
+        <label class="control-item">Intensity
+          <input id="intensity" type="range" min="1" max="10" value="6" />
+        </label>
+        <button id="surpriseBtn" class="btn">Surprise Roast</button>
+      </div>
+    </header>
+
+    <section class="chat-wrap">
+      <div id="chat" class="chat"></div>
+
+      <form id="inputForm" class="input-area" autocomplete="off">
+        <input id="userInput" placeholder="Type something (or provoke me)..." />
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+    </section>
+
+    <aside class="right-panel">
+      <h3>Settings</h3>
+      <div class="setting">
+        <label><input id="ttsToggle" type="checkbox" checked /> TTS Enabled</label>
+      </div>
+      <div class="setting">
+        <label><input id="autoInsultToggle" type="checkbox" /> Auto-insult on idle</label>
+      </div>
+      <div class="setting">
+        <button id="downloadLog" class="btn">Download session log</button>
+      </div>
+      <footer class="small">Made by you. Use responsibly.</footer>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
